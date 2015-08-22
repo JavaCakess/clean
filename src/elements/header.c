@@ -23,7 +23,11 @@ void Header_Draw(void* self, Surface* surface, WINDOW* window)
 
     int max_y, max_x;
     getmaxyx(window, max_y, max_x);
-    int text_x = (max_x / 2) - (strlen(header->text) / 2);
+    int text_x = 0;
+
+    if (header->centered) {
+        text_x = (max_x / 2) - (strlen(header->text) / 2);
+    }
 
     attron(header->color);
         fill_row(window, header->y, ' ');
