@@ -6,6 +6,7 @@ Header* Header_New(char* text, int color, bool centered)
 
     header->draw = Header_Draw;
     header->destroy = Header_Destroy;
+    header->input = NULL;
 
     header->text = strdup(text);
     header->x = 0;

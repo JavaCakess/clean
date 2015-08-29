@@ -6,6 +6,7 @@ Label* Label_New(char* text, int y, int x)
 
     label->draw = Label_Draw;
     label->destroy = Label_Destroy;
+    label->input = NULL;
 
     label->text = strdup(text);
     label->x = x;

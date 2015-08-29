@@ -27,4 +27,9 @@ void Surface_AddElement(Surface* surface, void* element);
 /* Draws all the elements to the specified window. */
 void Surface_DrawToWindow(Surface* surface, WINDOW* window);
 
+/* Pass a keypress to all elements who have a non-NULL 'input' function
+ * pointer.
+ */
+void Surface_PassKeypress(Surface* surface, int keypress);
+
 #endif /* SURFACE_H */

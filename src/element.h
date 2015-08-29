@@ -4,6 +4,7 @@
 #define ELEMENT_BASE_MEMBERS \
     void (*draw)(void* self, Surface* surface, WINDOW* window); \
     void (*destroy)(void* self, Surface* surface); \
+    void (*input)(void* self, Surface* surface, int keypress); \
     int x; \
     int y;
 

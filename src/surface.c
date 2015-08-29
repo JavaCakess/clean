@@ -39,3 +39,13 @@ void Surface_DrawToWindow(Surface* surface, WINDOW* window)
     }
     wrefresh(window);
 }
+
+void Surface_PassKeypress(Surface* surface, int keypress)
+{
+    for (size_t i = 0; i < surface->elements->size; i++) {
+        Element* e = surface->elements->list[i];
+        if (e->input) {
+            e->input(e, surface, keypress);
+        }
+    }
+}
